@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.liang.platform</groupId>
+    <artifactId>enterprise-platform</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>enterprise-platform-bom</module>
+        <module>enterprise-platform-db</module>
+        <module>enterprise-platform-mybatis</module>
+    </modules>
+    
+    <properties>
+        <!-- jdk版本1.8 -->
+        <java.version>1.8</java.version>
+        <!-- maven-compiler-plugin插件版本，Java代码编译 -->
+        <maven.plugin.version>3.8.1</maven.plugin.version>
+        <!-- maven编译时指定编码UTF-8 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <!-- 项目统一字符集编码UTF-8 -->
+        <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
+        <!-- 项目统一字符集编码UTF-8 -->
+        <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
+    
+        <!-- 项目统一设置版本号 -->
+        <project.version>1.0-SNAPSHOT</project.version>
+        
+        <!-- mysql数据库驱动 -->
+        <mysql.connector.version>5.1.47</mysql.connector.version>
+        <!-- postgresql数据库驱动 -->
+        <postgresql.connector.version>9.1-901-1.jdbc4</postgresql.connector.version>
+        <!-- 数据库连接池Druid -->
+        <druid.version>1.2.11</druid.version>
+        <!-- Mybatis Plus增强工具 -->
+        <mybatis.plus.version>3.5.2</mybatis.plus.version>
+        <!-- Swagger2 knife4j 方式引入 -->
+        <knife4j.version>3.0.3</knife4j.version>
+        <!-- Spring Cloud Alibaba -->
+        <spring.cloud.alibaba>2021.1</spring.cloud.alibaba>
+        <!-- OpenFeign 微服务调用解决方案-->
+        <spring.cloud.openFeign>3.1.3</spring.cloud.openFeign>
+        <!-- SpringBoot版本号 -->
+        <spring.boot.version>2.7.3</spring.boot.version>
+        <!-- SpringCloud版本号 -->
+        <spring.cloud.version>2021.0.3</spring.cloud.version>
+    </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.liang.platform</groupId>
+                <artifactId>enterprise-platform-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <repositories>
+        <repository>
+            <id>aliyun-repos</id>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>enterprise-release</id>
+            <name>Release Repository</name>
+            <url>https://packages.aliyun.com/maven/repository/2270587-release-FhAxnj/</url>
+        </repository>
+    </repositories>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-plugin</id>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileactive>dev</profileactive>
+            </properties>
+            <activation>
+                <!--默认为dev环境打包方式-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileactive>test</profileactive>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profileactive>pro</profileactive>
+            </properties>
+        </profile>
+    </profiles>
+    
+    <distributionManagement>
+        <repository>
+            <id>enterprise-release</id>
+            <name>Release Repository</name>
+            <url>https://packages.aliyun.com/maven/repository/2270587-release-FhAxnj/</url>
+        </repository>
+        <snapshotRepository>
+            <id>enterprise-snapshot</id>
+            <name>Snapshot Repository</name>
+            <url>https://packages.aliyun.com/maven/repository/2270587-snapshot-qaChXw/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
