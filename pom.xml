@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
@@ -12,6 +12,10 @@
         <module>enterprise-platform-bom</module>
         <module>enterprise-platform-db</module>
         <module>enterprise-platform-mybatis</module>
+        <module>enterprise-platform-swagger</module>
+        <module>enterprise-platform-boot</module>
+        <module>enterprise-platform-cloud</module>
+        <module>enterprise-platform-redis</module>
     </modules>
     
     <properties>
@@ -25,20 +29,10 @@
         <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
         <!-- 项目统一字符集编码UTF-8 -->
         <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
-    
+        
         <!-- 项目统一设置版本号 -->
         <project.version>1.0-SNAPSHOT</project.version>
         
-        <!-- mysql数据库驱动 -->
-        <mysql.connector.version>5.1.47</mysql.connector.version>
-        <!-- postgresql数据库驱动 -->
-        <postgresql.connector.version>9.1-901-1.jdbc4</postgresql.connector.version>
-        <!-- 数据库连接池Druid -->
-        <druid.version>1.2.11</druid.version>
-        <!-- Mybatis Plus增强工具 -->
-        <mybatis.plus.version>3.5.2</mybatis.plus.version>
-        <!-- Swagger2 knife4j 方式引入 -->
-        <knife4j.version>3.0.3</knife4j.version>
         <!-- Spring Cloud Alibaba -->
         <spring.cloud.alibaba>2021.1</spring.cloud.alibaba>
         <!-- OpenFeign 微服务调用解决方案-->
