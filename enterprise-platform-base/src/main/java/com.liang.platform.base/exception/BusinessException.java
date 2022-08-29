@@ -1,6 +1,6 @@
-package com.liang.platform.boot.exception;
+package com.liang.platform.base.exception;
 
-import com.liang.platform.boot.constant.ResultCodeEnum;
+import com.liang.platform.base.constant.ResultCodeEnum;
 import lombok.Getter;
 import lombok.Setter;
 

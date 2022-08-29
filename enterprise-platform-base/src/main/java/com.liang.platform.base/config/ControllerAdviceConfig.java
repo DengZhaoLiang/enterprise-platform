@@ -1,9 +1,9 @@
-package com.liang.platform.boot.config;
+package com.liang.platform.base.config;
 
-import com.liang.platform.boot.constant.ResultCodeEnum;
-import com.liang.platform.boot.entity.Result;
-import com.liang.platform.boot.exception.BusinessException;
-import com.liang.platform.boot.exception.SystemException;
+import com.liang.platform.base.constant.ResultCodeEnum;
+import com.liang.platform.base.entity.Result;
+import com.liang.platform.base.exception.BusinessException;
+import com.liang.platform.base.exception.SystemException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.converter.HttpMessageNotReadableException;

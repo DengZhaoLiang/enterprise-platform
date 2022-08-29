@@ -9,25 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>enterprise-platform-mybatis</artifactId>
-    <name>${project.artifactId}</name>
-    <version>${project.parent.version}</version>
-    <packaging>jar</packaging>
+    <artifactId>enterprise-platform-base</artifactId>
     
     <dependencies>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>com.liang.platform</groupId>
+            <artifactId>enterprise-platform-swagger</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <optional>true</optional>
         </dependency>
+    
+        <!-- Lombok 通过简单注解消除冗长代码  -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
+    
+        <!-- hutool Java常用工具包-->
         <dependency>
-            <groupId>com.liang.platform</groupId>
-            <artifactId>enterprise-platform-boot</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
         </dependency>
     </dependencies>
 </project>

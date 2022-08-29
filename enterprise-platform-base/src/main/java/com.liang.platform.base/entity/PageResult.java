@@ -1,6 +1,6 @@
-package com.liang.platform.boot.entity;
+package com.liang.platform.base.entity;
 
-import com.liang.platform.boot.constant.ResultCodeEnum;
+import com.liang.platform.base.constant.ResultCodeEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

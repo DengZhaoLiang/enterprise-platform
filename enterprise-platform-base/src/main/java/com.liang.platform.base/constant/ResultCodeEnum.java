@@ -1,4 +1,4 @@
-package com.liang.platform.boot.constant;
+package com.liang.platform.base.constant;
 
 public enum ResultCodeEnum {
 

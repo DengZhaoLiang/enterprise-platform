@@ -3,8 +3,8 @@ package com.liang.platform.cloud.config;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.BlockExceptionHandler;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.liang.platform.boot.constant.ResultCodeEnum;
-import com.liang.platform.boot.entity.Result;
+import com.liang.platform.base.constant.ResultCodeEnum;
+import com.liang.platform.base.entity.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

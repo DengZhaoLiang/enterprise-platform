@@ -16,6 +16,7 @@
         <module>enterprise-platform-boot</module>
         <module>enterprise-platform-cloud</module>
         <module>enterprise-platform-redis</module>
+        <module>enterprise-platform-base</module>
     </modules>
     
     <properties>
